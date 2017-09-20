@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告</title>
+</head>
+<body>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+	.box{
+		width: 100px;
+		height: 100px;
+		background: green;
+		position: relative;
+		top: 0;
+	}
+</style>
+	<div class="box"></div>
+</body>
+
+<script>
+	let box = document.getElementsByClassName('box')[0];
+    let speed = 10;
+	let Y=window.innerHeight;
+	let boxY=box.offsetWidth;
+ let t = setInterval(move,100);
+   function move (){
+   	let tops=box.offsetTop
+   if (tops<=0) {
+   	tops=0;
+   }
+   if(tops>=Y-boxY) {
+   	speed=-speed;
+   }
+   	 box.style.top =tops+speed+'px';
+}
+
+</script>
+</html>
